@@ -4,7 +4,7 @@ import {Text, TouchableHighlight, StyleSheet} from 'react-native';
 const TodoButton = ({onPress, complete, name}) => (
   <TouchableHighlight
     onPress={onPress}
-    underlayColor={#efefef}
+    underlayColor="#efefef"
     style={styles.button}>
     <Text
       style={[

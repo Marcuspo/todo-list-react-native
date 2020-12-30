@@ -53,7 +53,7 @@ class App extends Component {
   }
 
   deleteTodo(todoIndex) {
-    let todos = this.state;
+    let {todos} = this.state;
     todos = todos.filter((todo) => todo.todoIndex !== todoIndex);
     this.setState({todos});
   }
