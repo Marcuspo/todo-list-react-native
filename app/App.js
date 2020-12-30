@@ -17,6 +17,8 @@ class App extends Component {
       type: 'All',
     };
     this.submitTodo = this.submitTodo.bind(this);
+    this.toggleComplete = this.toggleComplete.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
   }
 
   inputChange(inputValue) {
@@ -38,6 +40,22 @@ class App extends Component {
     this.setState({todos, inputValue: ''}, () => {
       console.log('State:', this.state);
     });
+  }
+
+  toggleComplete(todoIndex) {
+    let todos = this.state.todos;
+    todos.forEach((todo) => {
+      if (todo.todoIndex === todoIndex) {
+        todo.complete = !todo.complete;
+      }
+    });
+    this.setState({todos});
+  }
+
+  deleteTodo(todoIndex) {
+    let todos = this.state;
+    todos = todos.filter((todo) => todo.todoIndex !== todoIndex);
+    this.setState({todos});
   }
 
   render() {
