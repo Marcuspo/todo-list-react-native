@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, ScrollView, StyleSheet} from 'react-native';
 
+import Button from './components/Button';
 import Heading from './components/Heading';
 import Input from './components/TextInput';
 
@@ -14,6 +15,7 @@ class App extends Component {
       todos: [],
       type: 'All',
     };
+    this.submitTodo = this.submitTodo.bind(this);
   }
 
   inputChange(inputValue) {
@@ -47,6 +49,7 @@ class App extends Component {
             inputValue={inputValue}
             inputChange={(text) => this.inputChange(text)}
           />
+          <Button submitTodo={this.submitTodo} />
         </ScrollView>
       </View>
     );
@@ -56,7 +59,7 @@ class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#f5f5f5',
   },
   content: {
     flex: 1,
