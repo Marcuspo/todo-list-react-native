@@ -4,16 +4,16 @@ import TabBarItem from './TabBarItem';
 
 const TabBar = ({setType, type}) => (
   <View style={styles.container}>
-    <TabBarItem type={type} title={'Todos'} setType={() => setType('Todos')} />
+    <TabBarItem type={type} title="Todos" setType={() => setType('Todos')} />
     <TabBarItem
       type={type}
-      title={'Ativos'}
+      title="Ativos"
       border
       setType={() => setType('Ativos')}
     />
     <TabBarItem
       type={type}
-      title={'Completados'}
+      title="Completados"
       border
       setType={() => setType('Completados')}
     />

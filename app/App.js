@@ -5,6 +5,8 @@ import Button from './components/Button';
 import Heading from './components/Heading';
 import Input from './components/TextInput';
 import TodoList from './components/TodoList';
+import TabBar from './components/TabBar';
+import TabBarItem from './components/TabBarItem';
 
 let todoIndex = 0;
 
@@ -60,11 +62,11 @@ class App extends Component {
   }
 
   setType(type) {
-    this.setType({type});
+    this.setState({type});
   }
 
   render() {
-    const {inputValue, todos} = this.state;
+    const {inputValue, todos, type} = this.state;
     return (
       <View style={styles.container}>
         <ScrollView keyboardShouldPersistTaps="always" style={styles.content}>
