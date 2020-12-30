@@ -19,6 +19,7 @@ class App extends Component {
     this.submitTodo = this.submitTodo.bind(this);
     this.toggleComplete = this.toggleComplete.bind(this);
     this.deleteTodo = this.deleteTodo.bind(this);
+    this.setType = this.setType.bind(this);
   }
 
   inputChange(inputValue) {
@@ -56,6 +57,10 @@ class App extends Component {
     let {todos} = this.state;
     todos = todos.filter((todo) => todo.todoIndex !== todoIndex);
     this.setState({todos});
+  }
+
+  setType(type) {
+    this.setType({type});
   }
 
   render() {
