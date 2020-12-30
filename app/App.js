@@ -4,6 +4,8 @@ import {View, ScrollView, StyleSheet} from 'react-native';
 import Heading from './components/Heading';
 import Input from './components/TextInput';
 
+let todoIndex = 0;
+
 class App extends Component {
   constructor() {
     super();
@@ -17,6 +19,22 @@ class App extends Component {
   inputChange(inputValue) {
     console.log(' Valor inserido: ', inputValue);
     this.setState({inputValue});
+  }
+
+  submitTodo() {
+    if (this.state.inputValue.match(/^\s*$/)) {
+      return;
+    }
+    const todo = {
+      title: this.state.inputValue,
+      todoIndex,
+      complete: false,
+    };
+    todoIndex++;
+    const todos = [...this.state.todos, todo];
+    this.setState({todos, inputValue: ''}, () => {
+      console.log('State:', this.state);
+    });
   }
 
   render() {
