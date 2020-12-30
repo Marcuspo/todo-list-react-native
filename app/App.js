@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {View, ScrollView, StyleSheet} from 'react-native';
 
-import Heading from './Headingcomponents/Heading';
+import Heading from './components/Heading';
+import Input from './components/TextInput';
 
 class App extends Component {
   constructor() {
@@ -13,12 +14,21 @@ class App extends Component {
     };
   }
 
+  inputChange(inputValue) {
+    console.log(' Valor inserido: ', inputValue);
+    this.setState({inputValue});
+  }
+
   render() {
+    const {inputValue} = this.state;
     return (
       <View style={styles.container}>
         <ScrollView keyboardShouldPersistTaps="always" style={styles.content}>
           <Heading />
-          <View />
+          <Input
+            inputValue={inputValue}
+            inputChange={(text) => this.inputChange(text)}
+          />
         </ScrollView>
       </View>
     );
@@ -28,7 +38,7 @@ class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: 'white',
   },
   content: {
     flex: 1,
