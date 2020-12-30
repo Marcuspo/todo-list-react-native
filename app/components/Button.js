@@ -7,7 +7,7 @@ const Button = ({submitTodo}) => (
       underlayColor={'#efefef'}
       style={styles.button}
       onPress={submitTodo}>
-      <Text style={styles.submit}>Submit</Text>
+      <Text style={styles.submit}>Adicionar</Text>
     </TouchableHighlight>
   </View>
 );
