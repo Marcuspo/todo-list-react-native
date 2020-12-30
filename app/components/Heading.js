@@ -14,7 +14,7 @@ const style = StyleSheet.create({
   headerText: {
     textAlign: 'center',
     fontSize: 72,
-    color: 'blue',
+    color: 'rgba(175, 47, 47, 0.25)',
     fontWeight: '100',
   },
 });

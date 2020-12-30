@@ -1,11 +1,13 @@
 import React from 'react';
 import {View, TextInput, StyleSheet} from 'react-native';
 
-const Input = () => (
+const Input = ({inputValue, inputChange}) => (
   <View style={style.inputContainer}>
     <TextInput
+      value={inputValue}
+      onChangeText={inputChange}
       style={style.input}
-      placeholder={'diz a boa!!!'}
+      placeholder={'Escreve o que não deve esquecer'}
       placeholderTextColor="black"
       selectionColor="#666666"
     />
